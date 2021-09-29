@@ -2,7 +2,7 @@
 # valor do pagamento (Deve ser um número INTEIRO), e exibir quantos litros (Número INTEIRO) ele conseguiu colocar 
 #no tanque, considerando que o algoritmo já sabe que o combustível custa R$6
 .data
-	escrevaIntro: .asciiz "GASOLINA\nEntre com o valor do pagamento (inteiro): R$ "
+	escrevaIntro: .asciiz "GASOLINA\nEntre com o valor do pagamento (inteiro): R$"
 	escrevaSaida: .asciiz "\nQuantidade de litros de gasolina adicionado ao tanque: "
 .text
 main:
