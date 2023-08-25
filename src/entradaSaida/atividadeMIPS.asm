@@ -1,15 +1,10 @@
 .data
-	escrevaIntro: .asciiz "AOC - Exercicio 59!" 
-	escrevaEntrada: .asciiz "\nDigite um numero de termos (n): "
-	escrevaSaida: .asciiz "\nRESULTADO DE (H) = "
-	escrevaSaidaMenor: .asciiz "* Numero digitado (-) negativo, nao pode gerar nenhum termo"
-	escrevaSaidaZero: .asciiz "* Numero digitado (0), valor de H = 0"
+	escrevaEntrada: .asciiz "\nDigite o numero de termos (n): "
+	escrevaSaida: .asciiz "RESULTADO DE (H) = "
+	escrevaSaidaMenor: .asciiz "Numero digitado (-) negativo, nao pode gerar nenhum termo"
+	escrevaSaidaZero: .asciiz "Numero digitado (0), valor de H = 0"
 .text
 main:
-	li $v0, 4
-	la $a0, escrevaIntro
-	syscall
-
 	li $v0, 4
 	la $a0, escrevaEntrada
 	syscall

@@ -1,10 +1,10 @@
-# Faça um algoritmo que leia os valores A, B, C e imprima na tela se a soma de A + B é menor que C
-# A+B=SOMAAB SOMAAB<C esc OR SOMAAB>C esc
-.data	
+.data
 	escrevaA: .asciiz "Entre com o valor de A: "
-	escrevaB: .asciiz "\nEntre com o valor de B: "
-	escrevaC: .asciiz "\nEntre com o valor de C: "
-	escrevaMenor: .asciiz "A soma de A e B é Menor que C."
+	escrevaB: .asciiz "Entre com o valor de B: "
+	escrevaC: .asciiz "Entre com o valor de C: "
+	escrevaMenor: .asciiz "A soma de A e B ï¿½ Menor que C."
+	escrevaMaior: .asciiz "A soma de A e B ï¿½ Maior que C."
+	escrevaIgual: .asciiz "A, B e C sï¿½o iguais."
 .text
 main:
 	li $v0, 4
@@ -34,11 +34,22 @@ main:
 	add $t3, $t0, $t1
 	
 	blt $t3, $t2, menor
+	bgt $t3, $t2, maior
+	
+	li $v0, 4
+	la $a0, escrevaIgual
+	syscall
 	j final
 	
 menor:
 	li $v0, 4
 	la $a0, escrevaMenor
+	syscall
+	j final
+	
+maior:
+	li $v0, 4
+	la $a0, escrevaMaior
 	syscall
 	j final
 
